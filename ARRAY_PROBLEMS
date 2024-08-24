@@ -1,0 +1,147 @@
+------------------------------------------------------------------------------------1---------------------------------------------------------------------
+#----------- smallest and largest in an array:-------------------
+
+n = int(input("Enter the length of array: "))
+arr=list(map(int,input().split()))
+arr.sort() # d=sorted(arr)
+print(arr[0]) #print(d[0])
+print(arr[n-1]) #print(d[n-1])
+
+
+-------------------------------------------------------------------------------------------2--------------------------------------------------------------------------
+
+#----------- Second smallest and second largest in array-----------------------
+def fss(n, arr):
+    unique_arr = list(set(arr))
+    if n < 2:  
+        return None
+    else:
+        unique_arr.sort()
+        return unique_arr[1]
+
+def fsl(n, arr):
+    unique_arr = list(set(arr))
+    if n < 2: 
+        return None
+    else:
+        unique_arr.sort(reverse=True)
+        return unique_arr[1]
+    
+n = int(input("Enter the length of array: "))
+arr = list(map(int, input().split()))
+print(fss(n, arr))
+print(fsl(n, arr))
+
+---------------------------------------------------------------------------------------3-----------------------------------------------------------------------------
+#------------- Reverse the array-------------
+n = int(input("Enter the length of array: "))
+arr=list(map(int,input().split()))
+arr.reverse()
+print(arr)
+# ------------------"OR"
+def rev(arr,n):
+    p=0
+    m=n-1
+    while(p<m):
+        arr[p],arr[m]=arr[m],arr[p]
+        p+=1
+        m-=1
+    print(arr)
+
+if __name__=="__main__":
+    arr=list(map(int,input().split()))
+    n = len(arr)
+    rev(arr, n)
+
+---------------------------------------------------------------------------------------4-----------------------------------------------------------------------------
+
+# -----------------Count the frequency of each element---------------
+def Frequency(arr, n):
+    mp = {}
+    for i in range(n):
+        if arr[i] in mp:
+            mp[arr[i]] += 1
+        else:
+            mp[arr[i]] = 1
+    for x in mp:
+        print(x, mp[x])
+
+
+if __name__ == '__main__':
+    arr=list(map(int,input().split()))
+    n = len(arr)
+    Frequency(arr, n)
+
+#--------- "OR"
+
+from collections import Counter
+
+arr=list(map(int,input().split()))
+frequency = Counter(arr)
+print(frequency)
+------------------------------------------------------------------------------------5-----------------------------------------------------------------------------
+# --------------Rearrange in ascending and descending order-----------------
+def ascc(arr,n):
+    arr.sort()
+    return arr
+def desc(arr,n):
+    arr.sort(reverse=True)
+    return arr
+
+if __name__=="__main__":
+    arr=list(map(int,input().split()))
+    n=len(arr)
+    print(ascc(arr,n))
+    print(desc(arr,n))
+
+-------------------------------------------------------------------------------------6-----------------------------------------------------------------------------
+#-------------------Rearranging first half in ascending and second half  in descending order--------------------
+arr = list(map(int,input().split()))
+n = len(arr)
+arr.sort()
+
+for i in range(n // 2):
+    print(arr[i], end=" ")
+
+for i in range(n - 1, n // 2 - 1, -1):
+    print(arr[i], end=" ")
+-------------------------------------------------------------------------------------7-----------------------------------------------------------------------------
+#----------- Calculate sum of all the elements in array------------
+arr = list(map(int,input().split()))
+n = len(arr)
+sm=0
+for i in range(n):
+    sm=arr[i]+sm
+    i+=1
+print(sm)
+#-----"OR"
+arr = list(map(int,input().split()))
+sm=sum(arr)
+print(sm)
+------------------------------------------------------------------------------------8-----------------------------------------------------------------------------
+# ------------Find average of all the elements in array------------
+arr = list(map(int,input().split()))
+n=len(arr)
+sm=sum(arr)
+s=sm/n
+print(s)
+-------------------------------------------------------------------------------------9-----------------------------------------------------------------------------
+#-------------------------- Find median of the elements in array-------------
+arr = list(map(int,input().split()))
+n=len(arr)
+arr.sort()
+if n%2!=0:
+    print(arr[n//2])
+else:
+    m1=arr[n//2-1]
+    m2=arr[n//2]
+    print((m1+m2)/2)
+-----------------------------------------------------------------------------------10----------------------------------------------------------------------------
+# -------------Remove duplicates from the array---------------------
+arr = list(map(int,input().split()))
+n=len(arr)
+us=list(set(arr))
+print(us)
+
+
+
