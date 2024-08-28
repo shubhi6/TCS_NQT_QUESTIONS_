@@ -1,1 +1,93 @@
+-----------------------1----------------------------
 
+# Bubble sort algorithms
+def bs(arr):
+    n=len(arr)
+    for i in range(n):
+        for j in range(0,n-i-1):
+            if arr[j]>arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+
+arr=list(map(int,input().split()))
+bs(arr)
+print(arr)
+
+----------------------------2--------------------------
+
+# Selection sort algorithms
+def ss(arr):
+    n=len(arr)
+    for i in range(n):
+        m=i
+        for j in range(i+1,n):
+            if arr[j]<arr[m]:
+                m=j
+        arr[i],arr[m]=arr[m],arr[i]
+
+arr=list(map(int,input().split()))
+ss(arr)
+print(arr)
+
+-----------------------------3----------------------
+
+# Insertion sort algorithms
+def Is(arr):
+    n=len(arr)
+    for i in range(n):
+        key=arr[i]
+        j=i-1
+        while j>=0 and key<arr[j]:
+            arr[j+1]=arr[j]
+            j-=1
+        arr[j+1]=key
+
+arr=list(map(int,input().split()))
+Is(arr)
+print(arr)
+
+-----------------------------4----------------------
+
+# Quick sort algorithm
+def qs(arr):
+    n=len(arr)
+    if n<=1:
+        return arr
+    else:
+        pivot=arr[n//2]
+        left=[x for x in arr if x < pivot]
+        right=[x for x in arr if x > pivot]
+        middle=[x for x in arr if x == pivot]
+        return qs(left)+middle+qs(right)
+
+arr=list(map(int,input().split()))
+print(qs(arr))
+
+-----------------------------5----------------------
+
+# Merge sort algorithms
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+
+    return merge(left, right)
+
+def merge(left, right):
+    result, i, j = [], 0, 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:] or right[j:])
+    return result
+
+arr = list(map(int,input().split()))
+print(merge_sort(arr))
+
+    
