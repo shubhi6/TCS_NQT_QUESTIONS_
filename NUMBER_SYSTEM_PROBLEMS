@@ -1,0 +1,106 @@
+<-------------------------BINARY TO OTHER------------------------------->
+
+------------------------------1------------------------
+
+# Convert binary to decimal
+b=input()
+d=int(b,2)
+print(d)
+
+------------------------------2------------------------
+
+# Convert binary to octal
+b=input()
+d=int(b,2)
+o=oct(d)
+print(o) #prints with prefix 0o
+print(o[2:]) #prints without prefix 0o
+
+------------------------------3------------------------
+
+# Convert binary to hexadecimal
+b=input()
+d=int(b,2)
+h=hex(d)
+print(h) #prints with prefix 0x
+print(h[2:]) #prints without prefix 0x
+
+<-------------------------DECIMAL TO OTHER------------------------------->
+
+------------------------------1------------------------
+
+# Convert decimal to binary
+d=int(input())
+de=(bin(d))
+print(de) #prints with prefix 0b
+print(de[2:]) #prints without prefix 0b
+
+------------------------------2------------------------
+
+# Convert decimal to octal
+d=int(input())
+de=(oct(d))
+print(de) #prints with prefix 0o
+print(de[2:]) #prints without prefix 0o
+
+------------------------------3------------------------
+
+# Convert decimal to hexadecimal
+d=int(input())
+de=(hex(d))
+print(de) #prints with prefix 0x
+print(de[2:]) #prints without prefix 0x
+
+<------------------------OCTAL TO OTHER------------------------------->
+
+------------------------------1------------------------
+
+# Convert octal to binary
+o=input()
+d=int(o,8)
+de=(bin(d))
+print(de) #prints with prefix 0b
+print(de[2:]) #prints without prefix 0b
+
+-----------------------------2------------------------
+
+# Convert octal to decimal
+o=input()
+de=int(o,8)
+print(de)
+
+------------------------------3------------------------
+
+# Convert octal to hexadecimal
+o=input()
+d=int(o,8)
+de=(hex(d))
+print(de) #prints with prefix 0x
+print(de[2:]) #prints without prefix 0x
+
+<-------------------------HEXADECIMAL TO OTHER------------------------------->
+
+------------------------------1------------------------
+
+# Convert hexadecimal to binary
+h=input()
+d=int(h,16)
+de=(bin(d))
+print(de) #prints with prefix 0b
+print(de[2:]) #prints without prefix 0b
+
+------------------------------2------------------------
+
+# Convert hexadecimal to decimal
+h=input()
+de=int(h,16)
+print(de)
+
+------------------------------3------------------------
+
+# Convert hexadecimal to octal
+h=input()
+d=int(h,16)
+de=(hex(d))
+print(de) #prints with prefix 0x
+print(de[2:]) #prints without prefix 0x
