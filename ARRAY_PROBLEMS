@@ -1,4 +1,4 @@
-------------------------------------------------------------------------------------1---------------------------------------------------------------------
+------------------------------------------------------------------------------------1------------------------------------------------------------------------------
 #----------- smallest and largest in an array:-------------------
 
 n = int(input("Enter the length of array: "))
@@ -8,7 +8,7 @@ print(arr[0]) #print(d[0])
 print(arr[n-1]) #print(d[n-1])
 
 
--------------------------------------------------------------------------------------------2--------------------------------------------------------------------------
+-----------------------------------------------------------------------------2-----------------------------------------------------------------------------------
 
 #----------- Second smallest and second largest in array-----------------------
 def fss(n, arr):
@@ -33,6 +33,7 @@ print(fss(n, arr))
 print(fsl(n, arr))
 
 ---------------------------------------------------------------------------------------3-----------------------------------------------------------------------------
+
 #------------- Reverse the array-------------
 n = int(input("Enter the length of array: "))
 arr=list(map(int,input().split()))
@@ -79,7 +80,9 @@ from collections import Counter
 arr=list(map(int,input().split()))
 frequency = Counter(arr)
 print(frequency)
+
 ------------------------------------------------------------------------------------5-----------------------------------------------------------------------------
+
 # --------------Rearrange in ascending and descending order-----------------
 def ascc(arr,n):
     arr.sort()
@@ -95,6 +98,7 @@ if __name__=="__main__":
     print(desc(arr,n))
 
 -------------------------------------------------------------------------------------6-----------------------------------------------------------------------------
+
 #-------------------Rearranging first half in ascending and second half  in descending order--------------------
 arr = list(map(int,input().split()))
 n = len(arr)
@@ -105,7 +109,9 @@ for i in range(n // 2):
 
 for i in range(n - 1, n // 2 - 1, -1):
     print(arr[i], end=" ")
+
 -------------------------------------------------------------------------------------7-----------------------------------------------------------------------------
+
 #----------- Calculate sum of all the elements in array------------
 arr = list(map(int,input().split()))
 n = len(arr)
@@ -118,14 +124,18 @@ print(sm)
 arr = list(map(int,input().split()))
 sm=sum(arr)
 print(sm)
+
 ------------------------------------------------------------------------------------8-----------------------------------------------------------------------------
+
 # ------------Find average of all the elements in array------------
 arr = list(map(int,input().split()))
 n=len(arr)
 sm=sum(arr)
 s=sm/n
 print(s)
+
 -------------------------------------------------------------------------------------9-----------------------------------------------------------------------------
+
 #-------------------------- Find median of the elements in array-------------
 arr = list(map(int,input().split()))
 n=len(arr)
@@ -136,12 +146,196 @@ else:
     m1=arr[n//2-1]
     m2=arr[n//2]
     print((m1+m2)/2)
+
 -----------------------------------------------------------------------------------10----------------------------------------------------------------------------
+
 # -------------Remove duplicates from the array---------------------
 arr = list(map(int,input().split()))
 n=len(arr)
 us=list(set(arr))
 print(us)
 
+-------------------------------------------------------------------------------------11-----------------------------------------------------------------------------
 
+# Calculate the square of every elements in the array and find its sum
+arr = list(map(int,input().split()))
+n=len(arr)
+sarr = []
+for i in range(n):
+    sarr.append(arr[i]**2)
+d=sum(sarr)
+print(d)
+# "OR"
+arr = list(map(int, input().split()))  
+d = sum(x ** 2 for x in arr)   
+print(d) 
+
+------------------------------------------------------------------------------------12-----------------------------------------------------------------------------
+
+# Find all the repeating elements in the array in O(N) time
+
+from collections import Counter
+def find_repeating_elements(arr):
+    frequency = Counter(arr)
+
+    repeating_elements = [element for element, count in frequency.items() if count > 1]
+    
+    return repeating_elements
+
+arr = list(map(int,input("Enter the elements of the array : ").split()))
+repeats = find_repeating_elements(arr)
+print("Repeating elements:", repeats)
+
+------------------------------------------------------------------------------------13-----------------------------------------------------------------------------
+
+# Find all the non-repeating elements in the array in O(N) time
+
+from collections import Counter
+def find_repeating_elements(arr):
+    frequency = Counter(arr)
+
+    repeating_elements = [element for element, count in frequency.items() if count <= 1]
+    
+    return repeating_elements
+
+arr = list(map(int,input("Enter the elements of the array : ").split()))
+repeats = find_repeating_elements(arr)
+print("Repeating elements:", repeats)
+
+-------------------------------------------------------------------------------------14----------------------------------------------------------------------------
+
+# Find all the symmetric pairs in the array
+def sym(pairs):
+    pair_dict = {}
+    sym_pairs = []
+    
+    for p in pairs:
+        a, b = p
+        if pair_dict.get((b, a), False):
+            sym_pairs.append((a, b))
+        else:
+            pair_dict[(a, b)] = True
+    
+    return sym_pairs
+
+pairinp = input("Enter pairs : ")
+
+pairs = [tuple(map(int, pair.strip('()').split(','))) for pair in pairinp.split() if pair]
+
+print("Symmetric pairs:", sym(pairs))
+
+-------------------------------------------------------------------------------------15-----------------------------------------------------------------------------
+
+# Maximum product subarray in array
+def findmaxsub(arr,n):
+    p1=arr[0]
+    p2=arr[0]
+    res=arr[0]
+    for i in range(1,n):
+        temp=max(arr[i],p1*arr[i],p2*arr[i])
+        p2=min(arr[i],p1*arr[i],p2*arr[i])
+        p1=temp
+        res=max(res,p1)
+    return res
+arr = list(map(int,input().split()))
+n=len(arr)
+print(findmaxsub(arr,n))
+
+------------------------------------------------------------------------------------16-----------------------------------------------------------------------------
+
+# Sort elements of an array by frequency
+from collections import Counter
+def sbf(arr):
+    f=Counter(arr)
+    ss=sorted(arr,key=lambda x: (-f[x],x))
+    return ss
+arr=list(map(int,input().split()))
+print(sbf(arr))
+
+------------------------------------------------------------------------------------17-----------------------------------------------------------------------------
+
+# Rotate elements of array by k elements
+def ra(arr,k):
+    n=len(arr)
+    k=k%n
+    ro=arr[-k:]+arr[:-k]
+    return ro
+arr=list(map(int,input().split()))
+k=int(input())
+print(ra(arr,k))
+
+-------------------------------------------------------------------------------------18----------------------------------------------------------------------------
+
+# Find equilibrium index in an array
+def FEI(arr):
+    ts=sum(arr)
+    left=0
+    for i,n in enumerate(arr):
+        right=ts-left-n
+        if left==right:
+            return i
+        left+=n
+    return -1
+arr=list(map(int,input().split()))
+print(FEI(arr))
+
+------------------------------------------------------------------------------------19-----------------------------------------------------------------------------
+
+# Find circular rotation of array by k positions
+def reverses(arr,S,E):
+    while E>S:
+        arr[S],arr[E]=arr[E],arr[S]
+        S+=1
+        E-=1
+
+def ra(arr,k):
+    n=len(arr)
+    k=k%n
+    reverses(arr,0,n-1)
+    reverses(arr,0,k-1)
+    reverses(arr,k,n-1)
+
+arr=list(map(int,input().split()))
+k=int(input())
+ra(arr, k)
+print(arr)
+
+------------------------------------------------------------------------------------20-----------------------------------------------------------------------------
+
+# Sort according to the order defined by another array
+def srt(arr,ord):
+    orr={val:ind for ind , val in enumerate(ord)}
+    def skey(x):
+        return orr.get(x,float('inf'))
+    arr.sort(key=skey)
+
+arr=list(map(int,input().split()))
+ord=list(map(int,input().split()))
+srt(arr,ord)
+print(arr)
+
+-------------------------------------------------------------------------------------21-----------------------------------------------------------------------------
+
+# Search an element in an array
+def se(arr,tar):
+    for i ,v in enumerate(arr):
+        if v==tar:
+            return v,i
+    return -1
+
+arr=list(map(int,input().split()))
+tar=int(input())
+print(se(arr,tar))
+
+-------------------------------------------------------------------------------------22-----------------------------------------------------------------------------
+
+# Check if array is subset of another array or not
+def srt(main,sub):
+    mains=set(main)
+    subs=set(sub)
+    return subs.issubset(main)
+
+main=list(map(int,input().split()))
+sub=list(map(int,input().split()))
+print(srt(main,sub))
 
