@@ -1,0 +1,96 @@
+-----------------------------------1-------------------------
+
+# Check if a string is palindrome or not
+str=input()
+d= str[::-1]
+if d==str:
+    print("yes")
+else:
+    print("no")
+
+----------------------------------2-------------------------
+
+# Count number of vowels, consonants, spaces in String
+str=input()
+vowels="aeiou"
+ct=0
+st=0
+cnt=0
+for s in str:
+    if s in vowels:
+        ct+=1
+    elif s.isalpha():
+        cnt+=1
+    elif s.isspace():
+        st+=1
+
+print(f"vowels ct = {ct}\nconsonants ct = {cnt}\nspace ct = {st}")
+
+-----------------------------------3-------------------------
+
+# Find the ASCII value of a character
+c=input()
+av=ord(c)
+print(av)
+
+--------------------------------4------------------------
+
+
+# Remove all vowels from the String
+s=input()
+vo="aeiou"
+for c in s:
+    if c in vo:
+       s=s.replace(c,"")
+print(s)
+
+---------------------------------5-------------------------
+
+# Remove Spaces from a String
+s=input()
+vo=" "
+for c in s:
+    if c in vo:
+       s=s.replace(c,"")
+print(s)
+
+-------------------------------6-------------------------
+
+# Remove character from a String except alphabets
+s = input()
+result = ""
+for c in s:
+    if c.isalpha():  
+        result += c
+
+print(result)
+
+-----------------------------7------------------------
+
+# Reverse a String
+str=input()
+d=str[::-1]
+print(d)
+
+----------------------------8------------------------
+
+# Sum of numbers in a string
+import re
+def sun(s):
+    num= re.findall(r'\d+', s)
+    num = map(int, num)
+    return sum(num)
+s=input()
+print(sun(s))
+
+-----------------------------9-------------------------
+
+# Capitalize first and last character of each word of a string
+def cfl(s):
+    return ' '.join(
+        (word[0].upper() + word[1:-1] + word[-1].upper())
+        if len(word) > 1 else word.upper()
+        for word in s.split()
+    )
+s = input()
+print(cfl(s))
