@@ -1,0 +1,172 @@
+-----------------------------------1-------------------------------
+
+# Maximum and Minimum Digit in a Number
+n = int(input())
+maxi = float('-inf')
+mini = float('inf')
+while n>0:
+    l = n%10
+    if l>= maxi:
+        maxi = l
+    if l< mini:
+        mini = l
+    n=n//10
+print(maxi,mini)
+  
+-----------------------------------2-------------------------------
+
+# Print Fibonacci Series up to Nth term
+n=int(input())
+a,b=0,1
+for i in range(n):
+    print(a,end=" ")
+    a,b=b,a+b   
+print()
+
+----------------------------------3-------------------------------
+
+# Calculate the Power of a Number : Binary Exponentiation
+n,m=map(int,input().split()) #or
+# m=int(input()) 
+print(n**m)
+
+-----------------------------------4-------------------------------
+
+# Factors of a Given Number
+n=int(input())
+for i in range (1,n+1):
+    if n%i==0:
+        print(i,end=" ")
+    
+-----------------------------------5-------------------------------
+
+# Prime in given range
+s=int(input())
+e=int(input())
+for i in range(s,e):
+    if i>1:
+        for j in range(2,i):
+            if(i%j)==0:
+                break
+        else:
+            print(i)
+
+-----------------------------------6-------------------------------
+
+# Find whether eve or odd
+n=int(input())
+if n%2==0:
+    print("EVEN")
+else:
+    print("ODD")
+
+-----------------------------------7------------------------------
+
+# Find whether positive or negative
+n=int(input())
+if n>0:
+    print("POSITIVE")
+elif n==0:
+    print("ZERO")
+else:
+    print("NEGATIVE")
+
+-----------------------------------8-------------------------------
+
+# Find the factorial of the number
+n=int(input())
+f=1
+for i in range(1,n+1):
+    f*=i
+print(f)
+
+-----------------------------------9-------------------------------
+
+# Greatest of two number
+a,b=map(int,input().split())
+print(max(a,b))
+---------or-----
+a,b=map(int,input().split())
+if a>b:
+    print(a)
+elif b>a:
+    print(b)
+else:
+    print("equal")
+
+-----------------------------------10-------------------------------
+
+#Greatest of three number 
+a,b,c=map(int,input().split())
+print(max(a,b,c))
+---------or-----
+a,b,c=map(int,input().split())
+if a>b and a>c:
+    print(a)
+elif b>a and b>c:
+    print(b)
+elif c>a and c>b:
+    print(c)
+else:
+    print("equal")
+
+-----------------------------------11-------------------------------
+
+#Calculate area and perimeter of circle
+r=int(input())
+pi=3.14
+a=r*r*pi
+p=2*pi*r
+print(a,p)
+
+-----------------------------------12-------------------------------
+
+#Check if number is palindrome
+
+def ispal(n):
+    return str(n)==str(n)[::-1]
+
+n=int(input())
+if ispal(n):
+    print(f"{n}, is palindrome")
+else:
+    print(f"{n}, is not palindrome")
+
+-----------------------------------13-------------------------------
+
+# Find all the palindrom numbers in range
+def ispal(n):
+    return str(n)==str(n)[::-1]
+def pr(S,E):
+    return[n for n in range(S,E+1) if ispal(n)]
+
+S=int(input())
+E=int(input())
+print(pr(S,E))
+
+-----------------------------------14-------------------------------
+
+# Check if Prime or not 
+
+def isprime(n):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+n=int(input())
+if isprime(n):
+    print("YES")
+else:
+    print("NO")
+
+
+
