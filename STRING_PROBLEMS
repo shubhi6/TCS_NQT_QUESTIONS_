@@ -35,7 +35,6 @@ print(av)
 
 --------------------------------4------------------------
 
-
 # Remove all vowels from the String
 s=input()
 vo="aeiou"
@@ -94,3 +93,224 @@ def cfl(s):
     )
 s = input()
 print(cfl(s))
+
+----------------------------10-------------------------
+
+# Calculate Frequency of characters in a String
+from collections import Counter
+s=input()
+d=Counter(s)
+print(d)
+
+----------------------------11-------------------------
+
+# Find Non-repeating characters of a String
+from collections import Counter
+def res(s):
+   return [c for c,ct in Counter(s).items() if ct==1]
+s=input()
+print(" ".join(res(s)))
+        
+----------------------------12-------------------------
+
+# Check if two Strings are anagrams of each other       
+def ifana(s,t):
+    return sorted(s)==sorted(t)
+s=input()
+t=input()
+
+if ifana(s,t):
+    print("yes")
+else:
+    print("no")
+
+----------------------------13-------------------------
+
+# Count common sub-sequence in two strings
+def CommonSubsequencesCount(s, t):
+	n1 = len(s)
+	n2 = len(t)
+	prev = [0] * (n2 + 1)
+	for i in range(1, n1 + 1):
+		curr = [0] * (n2 + 1)
+		for j in range(1, n2 + 1):
+			if s[i - 1] == t[j - 1]:
+				curr[j] = 1 + curr[j - 1] + prev[j]
+			else:
+				curr[j] = curr[j - 1] + prev[j] - prev[j - 1]
+		prev = curr
+	
+	return prev[n2]
+s = input()
+t = input()
+print(CommonSubsequencesCount(s, t))
+
+----------------------------14-------------------------
+
+# Maximum occurring character in a string
+from collections import Counter
+s=input()
+d=Counter(s)
+print(max(d))
+
+----------------------------15-------------------------
+
+# Remove All Duplicates from a String
+s=input()
+st=set(s)
+print(" ".join(st))
+
+----------------------------16-------------------------
+
+# Print all the duplicates in the string
+def print_duplicates(s):
+    fd = {}
+    for char in s:
+        if char in fd:
+            fd[char] += 1
+        else:
+            fd[char] = 1
+    for char, count in fd.items():
+        if count > 1:
+            print(f"{char} - {count}")
+
+s = input()
+print_duplicates(s)
+
+-----------------------------17-------------------------
+
+# Remove Characters from first String present in the Second String
+def rem(s,t):
+    for i in s:
+        if i in t:
+            s=s.replace(i,"")
+    return s
+s = input()
+t = input()
+print(rem(s, t))
+
+-----------------------------18-------------------------
+
+# Change every letter with next lexicographic alphabet
+def ls(s):
+    result = ""
+    for i in s:
+        if i.isalpha():
+            if i.lower() == 'z':
+                result += 'a' if i.islower() else 'A'
+            else:
+                result += chr(ord(i) + 1)
+        else:
+            result += i
+    return result
+
+s = input()
+print(ls(s))
+
+----------------------------19------------------------
+
+# Find the largest word in a String
+def lar(s):
+    w=s.split()
+    ml=0
+    ll=""
+    for i in w:
+        if len(i)>ml:
+            ml=len(i)
+            ll=i
+    return ll
+s=input()
+print(lar(s))
+
+----------------------------20------------------------
+
+# Write a program to sort characters in a string
+s=input()
+s=''.join(sorted(s))
+print(s)
+
+---------------------------21-------------------------
+
+# Count the number of words in a given string
+s=input()
+ct=0
+w=s.split()
+for i in w:
+    ct+=1
+print(ct)
+
+----------------------------22-------------------------
+
+# Find word with highest number of repeated letters in string
+from collections import Counter
+
+def fs(s):
+    words = s.split()
+    m = 0
+    c = ""
+    for word in words:
+        counter = Counter(word)
+        mc = max(counter.values())
+        if mc > m:
+            m = mc
+            c = word
+        else:
+            c=-1
+    return c
+
+s = input()
+print(fs(s))
+
+----------------------------23-------------------------
+
+# Change case of each character in a string
+s=input()
+for i in s:
+    if i==i.lower():
+        d=i.upper()
+    elif i==i.upper():
+        d=i.lower()
+    print(d,end="")
+
+----------------------------24-------------------------
+
+# Concatenate one string to another
+s=input()
+t=input()
+f=s+t
+print(f)
+----------or-----------
+import pandas as pd
+s=input()
+t=input()
+f=pd.concat([s,t])
+print(f)
+
+---------------------------25-------------------------
+
+# Find the Position of a Substring within a String
+s=input()
+t=input()
+w=s.find(t)
+if w!=-1:
+    print(w+1)
+else:
+    print("-1")
+
+----------------------------26-------------------------
+
+# Reverse Words in a String
+s=input()
+w=s.split()
+d=w[::-1]
+print(' '.join(d),end=" ")
+
+----------------------------27-------------------------
+# Remove brackets from an algebric expression '(' or ')'
+s=input()
+c='('
+d=')'
+for i in s:
+    if i==c or i==d:
+        s=s.replace(i,"")
+print(s)
