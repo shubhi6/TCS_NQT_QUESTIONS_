@@ -67,13 +67,12 @@ def Frequency(arr, n):
     for x in mp:
         print(x, mp[x])
 
-
 if __name__ == '__main__':
     arr=list(map(int,input().split()))
     n = len(arr)
     Frequency(arr, n)
 
-#--------- "OR"
+#--------- "OR"--------------
 
 from collections import Counter
 
@@ -120,14 +119,14 @@ for i in range(n):
     sm=arr[i]+sm
     i+=1
 print(sm)
-#-----"OR"
+#-----"OR"------
 arr = list(map(int,input().split()))
 sm=sum(arr)
 print(sm)
 
 ------------------------------------------------------------------------------------8-----------------------------------------------------------------------------
 
-# ------------Find average of all the elements in array------------
+# Find average of all the elements in array
 arr = list(map(int,input().split()))
 n=len(arr)
 sm=sum(arr)
