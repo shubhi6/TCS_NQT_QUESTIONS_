@@ -83,7 +83,7 @@ print(frequency)
 
 ------------------------------------------------------------------------------------5-----------------------------------------------------------------------------
 
-# --------------Rearrange in ascending and descending order-----------------
+# Rearrange in ascending and descending order
 def ascc(arr,n):
     arr.sort()
     return arr
@@ -99,7 +99,7 @@ if __name__=="__main__":
 
 -------------------------------------------------------------------------------------6-----------------------------------------------------------------------------
 
-#-------------------Rearranging first half in ascending and second half  in descending order--------------------
+# Rearranging first half in ascending and second half  in descending order
 arr = list(map(int,input().split()))
 n = len(arr)
 arr.sort()
@@ -112,7 +112,7 @@ for i in range(n - 1, n // 2 - 1, -1):
 
 -------------------------------------------------------------------------------------7-----------------------------------------------------------------------------
 
-#----------- Calculate sum of all the elements in array------------
+# Calculate sum of all the elements in array
 arr = list(map(int,input().split()))
 n = len(arr)
 sm=0
@@ -136,7 +136,7 @@ print(s)
 
 -------------------------------------------------------------------------------------9-----------------------------------------------------------------------------
 
-#-------------------------- Find median of the elements in array-------------
+# Find median of the elements in array
 arr = list(map(int,input().split()))
 n=len(arr)
 arr.sort()
@@ -149,7 +149,7 @@ else:
 
 -----------------------------------------------------------------------------------10----------------------------------------------------------------------------
 
-# -------------Remove duplicates from the array---------------------
+# Remove duplicates from the array
 arr = list(map(int,input().split()))
 n=len(arr)
 us=list(set(arr))
