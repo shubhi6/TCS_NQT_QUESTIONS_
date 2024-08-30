@@ -334,3 +334,15 @@ main=list(map(int,input().split()))
 sub=list(map(int,input().split()))
 print(srt(main,sub))
 
+----------------------------------------23-----------------------------------
+
+# In an array square every elmenet and find its sum
+def csum(arr,n):
+    t=0
+    for i in range(n):
+        arr[i]=arr[i]**2
+        t+=arr[i]
+    return t
+arr=list(map(int,input().split()))
+n=len(arr)
+print(csum(arr,n))
