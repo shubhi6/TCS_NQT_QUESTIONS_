@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------1------------------------------------------------------------------------------
-#----------- smallest and largest in an array:-------------------
+#smallest and largest in an array
 
 n = int(input("Enter the length of array: "))
 arr=list(map(int,input().split()))
@@ -10,7 +10,7 @@ print(arr[n-1]) #print(d[n-1])
 
 -----------------------------------------------------------------------------2-----------------------------------------------------------------------------------
 
-#----------- Second smallest and second largest in array-----------------------
+#Second smallest and second largest in array
 def fss(n, arr):
     unique_arr = list(set(arr))
     if n < 2:  
@@ -34,7 +34,7 @@ print(fsl(n, arr))
 
 ---------------------------------------------------------------------------------------3-----------------------------------------------------------------------------
 
-#------------- Reverse the array-------------
+# Reverse the array
 n = int(input("Enter the length of array: "))
 arr=list(map(int,input().split()))
 arr.reverse()
@@ -56,7 +56,7 @@ if __name__=="__main__":
 
 ---------------------------------------------------------------------------------------4-----------------------------------------------------------------------------
 
-# -----------------Count the frequency of each element---------------
+# Count the frequency of each element
 def Frequency(arr, n):
     mp = {}
     for i in range(n):
