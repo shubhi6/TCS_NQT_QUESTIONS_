@@ -169,4 +169,15 @@ else:
     print("NO")
 
 
+----------------------------------15-------------------------------
 
+# In a number square every digits and sum them
+def fds(n):
+    n=str(n)
+    t=0
+    for d in n:
+        sd=int(d)**2
+        t+=sd
+    return t
+n=int(input())
+print(fds(n))
