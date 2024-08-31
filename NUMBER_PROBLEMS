@@ -292,19 +292,19 @@ n=int(input())
 d=str(n)[::-1]
 print(d)
             
-            
+-----------------------------------23-------------------------------            
 
 # Find GCD of two numbers
 import math as m
 a,b=map(int,input().split())
 print(m.gcd(a,b))
 
-
+-----------------------------------24-------------------------------
 
 # Find LCM of two numbers
 import math as m
 a,b=map(int,input().split())
 print(abs(a*b)//m.gcd(a,b))
 
-
+-----------------------------------25-------------------------------
 
