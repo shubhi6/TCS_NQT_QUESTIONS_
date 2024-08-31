@@ -181,3 +181,130 @@ def fds(n):
     return t
 n=int(input())
 print(fds(n))
+
+
+
+# Check if a number is armstrong or not
+def ifarm(n):
+    d=str(n)
+    p=len(d)
+    sp=sum(int(dg)**p for dg in d)
+    return sp==n
+n=int(input())
+if ifarm(n):
+    print("YES")
+else:
+    print("NO")
+
+
+
+# check if a number is a perfect number
+def isp(n):
+    if n<=1:
+        return False
+    sd=1
+    for i in range(2,int(n**0.5)+1):
+        if n%i==0:
+            sd+=i
+            if i!=n//i:
+                sd+=n//i
+    return sd==n
+
+n=int(input())
+if isp(n):
+    print("YES")
+else:
+    print("NO")
+
+
+
+# Sum of first n natural numbers
+def sunm(n):
+    return n*(n+1)//2
+n=int(input())
+print(sunm(n))
+
+
+
+# Sum of an AP series
+def ap(a,n,d):
+    return (n//2)*(2*a+(n-1)*d)
+a,n,d=map(int,input().split())
+print(ap(a,n,d))
+
+
+
+# Sum of an GP series
+def ap(a,n,r):
+    if r==1:
+        return a*n
+    return a*(r**(n-1))//(r-1)
+a,n,r=map(int,input().split())
+print(ap(a,n,r))
+
+
+
+# Find whether leap year or not
+def islp(y):
+    if(y%4==0):
+        if(y%100==0):
+            if(y%400==0):
+                return True
+            else:
+                return False
+        else:
+            return True
+    else:
+        return False    
+y=int(input())    
+if islp(y):
+    print("YES")
+else:
+    print("NO")
+    
+
+
+# Print all the prime factors of a given number
+from sympy import primefactors
+n=int(input())
+f=primefactors(n)
+print(f)
+----------or----------
+def pf(n):
+    f=[]
+    while n%2==0:
+        f.append(2)
+        n//=2
+    for i in range(3,int(n**0.5)+1,2):
+        while n%i==0:
+            f.append(i)
+            n//=i
+    if n>2:
+        f.append(n)
+    return f
+n=int(input())
+print(pf(n))
+            
+            
+
+# Reverse digits of a number
+n=int(input())
+d=str(n)[::-1]
+print(d)
+            
+            
+
+# Find GCD of two numbers
+import math as m
+a,b=map(int,input().split())
+print(m.gcd(a,b))
+
+
+
+# Find LCM of two numbers
+import math as m
+a,b=map(int,input().split())
+print(abs(a*b)//m.gcd(a,b))
+
+
+
