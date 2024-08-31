@@ -182,7 +182,7 @@ def fds(n):
 n=int(input())
 print(fds(n))
 
-
+-----------------------------------2-------------------------------
 
 # Check if a number is armstrong or not
 def ifarm(n):
@@ -196,7 +196,7 @@ if ifarm(n):
 else:
     print("NO")
 
-
+-----------------------------------2-------------------------------
 
 # check if a number is a perfect number
 def isp(n):
@@ -216,7 +216,7 @@ if isp(n):
 else:
     print("NO")
 
-
+-----------------------------------2-------------------------------
 
 # Sum of first n natural numbers
 def sunm(n):
@@ -232,7 +232,7 @@ def ap(a,n,d):
 a,n,d=map(int,input().split())
 print(ap(a,n,d))
 
-
+-----------------------------------2-------------------------------
 
 # Sum of an GP series
 def ap(a,n,r):
@@ -242,7 +242,7 @@ def ap(a,n,r):
 a,n,r=map(int,input().split())
 print(ap(a,n,r))
 
-
+-----------------------------------2-------------------------------
 
 # Find whether leap year or not
 def islp(y):
@@ -262,7 +262,7 @@ if islp(y):
 else:
     print("NO")
     
-
+-----------------------------------2-------------------------------
 
 # Print all the prime factors of a given number
 from sympy import primefactors
@@ -285,7 +285,7 @@ def pf(n):
 n=int(input())
 print(pf(n))
             
-            
+-----------------------------------2-------------------------------      
 
 # Reverse digits of a number
 n=int(input())
