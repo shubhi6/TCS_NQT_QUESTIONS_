@@ -308,3 +308,60 @@ print(abs(a*b)//m.gcd(a,b))
 
 -----------------------------------25-------------------------------
 
+# Check if number is strong or not
+import math
+
+def isst(n):
+    di = str(n)
+    df = sum(math.factorial(int(dig)) for dig in di)
+    return df == n
+
+n = int(input("Enter a number: "))    
+if isst(n):
+    print("YES")
+else:
+    print("NO")
+
+-----------------------------------26-------------------------------
+
+# Check if automorphic number or not
+import math
+
+def isam(n):
+    di = n*n
+    df = str(n)
+    dg=str(di)
+    return dg.endswith(df)
+
+n = int(input("Enter a number: "))    
+if isam(n):
+    print("YES")
+else:
+    print("NO")
+
+-----------------------------------27-------------------------------
+
+# Check if a given number is harshad or niven
+def ishd(n):
+    df=sum(int(d) for d in str(n))
+    return n%df==0
+  
+n = int(input("Enter a number: "))    
+if ishd(n):
+    print("YES")
+else:
+    print("NO")
+
+-----------------------------------28-------------------------------
+
+# Abundant number or not
+def isab(n):
+    df=sum(i for i in range(1,n) if n%i==0)
+    return df>n
+  
+n = int(input("Enter a number: "))    
+if isab(n):
+    print("YES")
+else:
+    print("NO")
+
