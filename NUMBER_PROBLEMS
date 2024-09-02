@@ -365,3 +365,117 @@ if isab(n):
 else:
     print("NO")
 
+-----------------------------------29-------------------------------
+
+# Sum of digits of number
+def fs(n):
+    return sum(int(d) for d in str(n))
+n=int(input())
+print(fs(n))
+-------or-----
+n=int(input())
+t=0
+for i in str(n):
+    t+=int(i)
+print(t)
+
+-----------------------------------30-------------------------------
+
+# Sum of numbers upto given range
+def s(n):
+    t=0
+    for i in range(n+1):
+        t=t+i
+    return t
+n=int(input())
+print(s(n))
+-------or------
+def s(n):
+    return n*(n+1)//2
+n=int(input())
+print(s(n))
+
+-----------------------------------31-------------------------------
+
+# Permutataions in which N people can occupy R seats in classroom
+import math
+def pr(n,r):
+    if r>n:
+        return 0
+    return math.factorial(n)//math.factorial(n-r)
+n=int(input())
+r=int(input())
+print(pr(n,r))
+
+-----------------------------------32-------------------------------
+
+# Program to add two fractions
+import math
+def f(n1,d1,n2,d2):
+    l=d1*d2//math.gcd(d1,d2)
+    an1=n1*(l//d1)
+    an2=n2*(l//d2)
+    n=an1+an2
+    g=math.gcd(n,l)
+    sn=n//g
+    sd=l//g
+    return sn,sd
+n1=int(input())
+d1=int(input())
+n2=int(input())
+d2=int(input())
+if d1==0 or d2==0:
+    print("denominator cant be zero")
+else:
+    resn,resd=f(n1,d1,n2,d2)
+    print(f"{resn}/{resd}")
+
+# Replace '0' with '1' in given integre
+def reps(n):
+    s=str(n)
+    m=s.replace('0','1')
+    k=int(m)
+    return k
+n=int(input())
+print(reps(n))
+
+-----------------------------------33-------------------------------
+
+# Program to find root of quadratic equation
+import cmath
+def er(a,b,c):
+    d=b**2-4*a*c
+    r1=(-b + cmath.sqrt(d))//(2*a)
+    r2=(-b - cmath.sqrt(d))//(2*a)
+    return r1,r2
+a,b,c=map(float,input().split())
+print(er(a,b,c)) 
+
+-----------------------------------34-------------------------------
+
+# Express the given number as sum of two prime numbers
+def is_prime(n):
+    if n <= 1:
+        return False
+    if n == 2:
+        return True  # 2 is the only even prime number
+    if n % 2 == 0:
+        return False
+    for i in range(3, int(n**0.5) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+def find_prime_sum(n):
+    if n < 4:
+        return "Number must be greater than or equal to 4."
+    for i in range(2, n):
+        if is_prime(i) and is_prime(n - i):
+            return i, n - i
+    return "No prime sum found."
+
+number = int(input("Enter a number: "))
+result = find_prime_sum(number)
+print(f"{number} can be expressed as the sum of the primes: {result}")
+
+
