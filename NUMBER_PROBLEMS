@@ -478,4 +478,14 @@ number = int(input("Enter a number: "))
 result = find_prime_sum(number)
 print(f"{number} can be expressed as the sum of the primes: {result}")
 
+-----------------------------------35-------------------------------
 
+#Calculate the sum of the table of any given number
+def tb(n):
+    d=0
+    for i in range(1,n+1):
+        t=n*i
+        d+=t
+    return d
+n = int(input())
+print(tb(n))
